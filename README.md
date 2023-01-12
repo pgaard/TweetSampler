@@ -7,6 +7,20 @@ The application tracks the most frequent hash tags and returns them along with o
 ```
 /api/TweetStatistics
 ```
+The endpoint returns the following data:
+
+* tweetCount - total tweets processed
+* uniqueHashTagCount - total number of unique hash tags found
+* tweetsPerSecond - number of tweets received in the last second
+* maxTweetsPerSecond - the highest tweetsPerSecond observed
+* topHashTags - a list of the most frequent hash tags and their occurance count
+
+There is one optional parameter hashTagNumber that can be used to change the number of topHashTags returned. The default is 10. e.g.
+
+```
+/api/TweetStatistics?hashTagNumber=100
+```
+
 
 There is a swagger endpoint at 
 
@@ -14,7 +28,7 @@ There is a swagger endpoint at
 /swagger/index.html
 ```
 
-In order to run this service, you must put your Twitter bearer token in **appsettings.json** under the key TwitterBearerToken.
+In order to run this service, you must put your Twitter bearer token in **appsettings.json** under the key **TwitterBearerToken**.
 
 ```
 {
